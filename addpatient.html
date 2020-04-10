@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif; }
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input,textarea, select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f6f6f6;
+}
+
+input, textarea{
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+<body>
+
+<form action="addpatient.php" method= "POST" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Add patient details</h1>  
+    <hr>
+
+
+    <label for="name"><b>Patient Name</b></label>
+    <input type="text" placeholder="Enter patient's name" name="name" required><br>
+
+    <br>
+    <br>
+
+    <label for="email"><b>Patient's age</b></label>
+    <input type="number" placeholder="Enter Patient's age" name="age" required>
+    <br>
+    <br>
+    <label><b>Current state of patient</b></label><br>
+    <SELECT id="s1" name="selection" required>
+    <Option value="stage1">Stage 1</option>
+    <Option value="stage2">Stage 2</option>
+    <Option value="stage3">Stage 3</option>
+    <Option value="critical">Critical</option>
+    <Option value="dead">Critical</option>
+    <Option value="free">Critical</option>
+    </SELECT><br>
+
+    <br>
+    
+    <label for="name"><b>Method of transmission</b></label><br>
+    <textarea name="meth_infc" placeholder = "Method of transmissi" rows="5" cols="30">  </textarea><br>
+    <br>
+    <br>
+
+    <label for="name"><b>Patient's previous medical history</b></label><br>
+    <textarea name="predisease" placeholder = "Previous history"rows="5" cols="30">  </textarea> <br>
+    <br>
+    <br>
+
+    <label for="name"><b>Treatment used</b></label><br>
+    <textarea name="meth_trtmnt" placeholder = "Treatment method used"rows="5" cols="30">  </textarea> <br>
+
+
+    <br>
+    <br>
+    <label for="name"><b>Admission Date </b></label><br>
+    <input type="date" placeholder="Admission date" name="admdate" required><br>
+
+  
+
+    <label for="name"><b>Discharge date</b></label><br>
+    <input type="date" placeholder="Discharge date" name="disdate" default= "N/A"><br>
+        
+    
+   
+
+    <div class="clearfix">
+      
+      <button type="reset" class="cancelbtn">Reset</button>
+      <button type="submit" class="signupbtn" name = "submit">Add </button>
+      <button name="back" onclick="Back()" value = "Back">Back</button>
+          <script type="text/javascript">
+            function Back() {window.location.assign('options.html')}</script>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
